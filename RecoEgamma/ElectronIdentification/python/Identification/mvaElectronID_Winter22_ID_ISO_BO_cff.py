@@ -41,7 +41,7 @@ mvaEleID_Winter22_ID_ISO_BO_producer_config = cms.PSet(
     nCategories         = cms.int32(6),
     categoryCuts        = categoryCuts,
     weightFileNames     = mvaWeightFiles,
-    variableDefinition  = cms.string(mvaVariablesFile)
+    variableDefinition  = cms.string(mvaVariablesFileRun3)
     )
 
 mvaEleID_Winter22_ID_ISO_HZZ = configureVIDMVAEleID( mvaEleID_Winter22_ID_ISO_HZZ_container )
