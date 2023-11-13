@@ -4,7 +4,8 @@ from os import path
 
 mvaTag = "Winter22IdIsoBo"
 
-weightFileDir = "RecoEgamma/ElectronIdentification/data/MVAWeightFiles/Winter_22_ID_ISO"
+#weightFileDir = "RecoEgamma/ElectronIdentification/data/MVAWeightFiles/Winter_22_ID_ISO"
+weightFileDir="~/CMSSW_13_0_0/src/RecoEgamma/ElectronIdentification/data/MVAWeightFiles/Winter_22_ID_ISO"
 
 mvaWeightFiles = cms.vstring(
      path.join(weightFileDir, "EB1_5.weights.xml.gz"), # EB1_5
@@ -14,7 +15,7 @@ mvaWeightFiles = cms.vstring(
      path.join(weightFileDir, "EB2_10.weights.xml.gz"), # EB2_10
      path.join(weightFileDir, "EE_10.weights.xml.gz"), # EE_10
      )
-
+'''
 categoryCuts = cms.vstring(
      "EleMVACats == 0", # EB1_5
      "EleMVACats == 1", # EB2_5
@@ -23,6 +24,15 @@ categoryCuts = cms.vstring(
      "EleMVACats == 4", # EB2_10
      "EleMVACats == 5", # EE_10
      )
+'''
+categoryCuts = cms.vstring(
+    "pt < 10. && abs(superCluster.eta) < 0.800",
+    "pt < 10. && abs(superCluster.eta) >= 0.800 && abs(superCluster.eta) < 1.479",
+    "pt < 10. && abs(superCluster.eta) >= 1.479",
+    "pt >= 10. && abs(superCluster.eta) < 0.800",
+    "pt >= 10. && abs(superCluster.eta) >= 0.800 && abs(superCluster.eta) < 1.479",
+    "pt >= 10. && abs(superCluster.eta) >= 1.479",
+)
 
 mvaEleID_Winter22_ID_ISO_HZZ_container = EleMVARaw_WP(
     idName = "mvaEleID-Winter22-ID-ISO-HZZ", mvaTag = mvaTag,
