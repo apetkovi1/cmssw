@@ -47,7 +47,7 @@ switchOnVIDElectronIdProducer(process, dataFormat)
 
 # define which IDs we want to produce
 my_id_modules = [
-        'RecoEgamma.ElectronIdentification.IdentificationmvaElectronID_Winter22_ID_ISO_BO_cff'
+        'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Winter22_ID_ISO_BO_cff'
                  ]
 
 #add them to the VID producer
